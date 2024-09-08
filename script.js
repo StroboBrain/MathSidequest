@@ -1,43 +1,88 @@
-let num1, num2;
-
-function generateProblem() {
-    num1 = Math.floor(Math.random() * 10);
-    num2 = Math.floor(Math.random() * 10);
-    document.getElementById('problem').innerText = `${num1} + ${num2} = ?`;
+//adds a number to the inner html of a button
+function addNumber(button, number){
+  button.innerHtml = number;
 }
 
-function checkAnswer() {
-    const answer = parseInt(document.getElementById('answer').value);
-    const result = document.getElementById('result');
-    if (answer === num1 + num2) {
-        result.innerText = 'Correct!';
-        result.style.color = 'green';
-    } else {
-        result.innerText = 'Incorrect, try again.';
-        result.style.color = 'red';
+class MovingButton {
+  constructor(buttonId, speedY, speedX) {
+    this.button = document.getElementById(buttonId);
+    this.speedY = speedY;
+    this.speedX = speedX;
+    this.directionX = 1;
+
+    // Set initial position to the top center of the container
+    this.posY = 0;
+    this.posX = (this.button.parentElement.clientWidth - this.button.offsetWidth) / 2;
+
+    // Apply initial position
+    this.button.style.top = this.posY + 'px';
+    this.button.style.left = this.posX + 'px';
+  }
+
+  moveButton() {
+    this.posY += this.speedY;
+
+    // Oscillating the button left and right
+    this.posX += this.speedX * this.directionX;
+    if (this.posX > this.button.parentElement.clientWidth - this.button.offsetWidth || this.posX < 0) {
+      this.directionX *= -1; // change direction if hitting the edges
     }
-    document.getElementById('answer').value = '';
-    generateProblem();
+
+    // Apply new position
+    this.button.style.top = this.posY + 'px';
+    this.button.style.left = this.posX + 'px';
+
+    // Reset the position if it reaches the bottom
+    if (this.posY > this.button.parentElement.clientHeight - this.button.offsetHeight) {
+      this.posY = 0;
+    }
+
+    requestAnimationFrame(this.moveButton.bind(this)); // continue animation
+  }
+
+  start() {
+    requestAnimationFrame(this.moveButton.bind(this));
+  }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const button = document.getElementById('fallingButton');
-    let topPosition = 0;
+class MathQuestion {
+  constructor() {
+    this.num1 = this.generateNumber();
+    this.num2 = this.generateNumber();
+    this.question = `${this.num1} + ${this.num2}`;
+    this.answer = this.num1 + this.num2;
+  }
 
-    function fall() {
-        if (topPosition < window.innerHeight - button.offsetHeight) {
-            topPosition += 5; // Adjust the speed of falling
-            button.style.top = topPosition + 'px';
-            requestAnimationFrame(fall);
-        }
-    }
-    requestAnimationFrame(fall);
+  generateNumber() {
+    return Math.floor(Math.random() * 100); // Generates a random number between 0 and 99
+  }
 
-    button.addEventListener('click', () => {
-        requestAnimationFrame(fall);
-    });
-});
+  checkAnswer(userAnswer) {
+    return userAnswer === this.answer;
+  }
 
-window.onload = generateProblem;
+  getQuestion() {
+    return this.question;
+  }
+}
+
+//adds a number to the inner html of a button
+function addNumber(button, number){
+  button.innerHTML = number;
+}
 
 
+
+
+
+
+
+
+
+// Start the animation when the DOM is fully loaded
+window.onload = () => {
+  const movingButton = new MovingButton('movingButton', 2, 3);
+  buttonTemp = document.getElementById("movingButton");
+  addNumber(buttonTemp,3);
+  movingButton.start();
+};

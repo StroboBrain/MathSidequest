@@ -1,51 +1,16 @@
-body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
-}
-
 .container {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-input {
-    padding: 10px;
-    margin: 10px 0;
-    width: 80%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #218838;
-}
-
-#result {
-    margin-top: 20px;
-    font-size: 1.2em;
-}
-
-#fallingButton {
+    border: 2px solid black; /* Black border */
+    width: 300px; /* Width of the container */
+    height: 300px; /* Height of the container */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative;
+    margin: 0 auto; /* Center the container on the page */
+    top: 50px; /* Adjust the top position as needed */
+  }
+  
+  #movingButton {
     position: absolute;
-    top: 0;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
+  }
+  
