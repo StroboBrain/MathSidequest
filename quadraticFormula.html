@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quadratic Formula</title>
+  
+
+  <link rel="stylesheet" href="kaTex/katex.min.css">
+  <script src="kaTex/katex.js"></script>
+</head>
+<body>
+    <h1>Quadratic Formula</h1>
+    <a href="https://de.serlo.org/mathe/1549/mitternachtsformel-quadratische-loesungsformel" target="_blank">Mitternachtsformel auf Serlo</a>
+    <h1>The Quadratic Formula</h1>
+    <p>To solve the quadratic equation <span id="equation"></span> using the quadratic formula:</p>
+    <p id="quadratic-formula"></p>
+    
+    <h2>Example:</h2>
+    <p>Consider the quadratic equation <span id="example-equation"></span>.</p>
+    <p>Using the quadratic formula:</p>
+    <div id="example-solution"></div>
+  
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          // Render the quadratic equation
+          var equation = "ax^2 + bx + c = 0";
+          katex.render(equation, document.getElementById('equation'));
+  
+          // Render the quadratic formula
+          var quadraticFormula = "x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}";
+          katex.render(quadraticFormula, document.getElementById('quadratic-formula'));
+  
+          // Render the example equation
+          var exampleEquation = "2x^2 + 3x - 2 = 0";
+          katex.render(exampleEquation, document.getElementById('example-equation'));
+  
+          // Render the example solution steps separately
+          var exampleSolution = [
+              "a = 2, b = 3, c = -2",
+              "x = \\frac{-3 \\pm \\sqrt{3^2 - 4 \\cdot 2 \\cdot (-2)}}{2 \\cdot 2}",
+              "x = \\frac{-3 \\pm \\sqrt{9 + 16}}{4}",
+              "x = \\frac{-3 \\pm \\sqrt{25}}{4}",
+              "x = \\frac{-3 \\pm 5}{4}",
+              "x = \\frac{2}{4} = \\frac{1}{2} \\text{ or } x = \\frac{-8}{4} = -2"
+          ];
+  
+          var solutionContainer = document.getElementById('example-solution');
+          exampleSolution.forEach(function(step) {
+              var stepElement = document.createElement('div');
+              katex.render(step, stepElement, {
+                  displayMode: true
+              });
+              solutionContainer.appendChild(stepElement);
+          });
+      });
+    </script>
+  </body>
+  
