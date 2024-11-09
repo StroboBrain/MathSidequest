@@ -1,3 +1,3 @@
 # Math Sidequest Buddy
 
-### Zahlenhagel is a simple Browser Math game
+### Website to help with some Math sidequests
