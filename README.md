@@ -1,6 +1,11 @@
-# Math Sidequest Buddy
+# Math Side Quest Buddy
 
-### Website to help with some Math side quests
+### Simple Website to help with some Math side quests
 
 ### Contribute
-If you want to help, you can help
+If you want to help, you can help.
+
+### ToDo
+- Improve styles.css
+- Primefactors 2-100
+- Create interative trainers
