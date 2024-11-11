@@ -8,4 +8,4 @@ If you want to help, you can help.
 ### ToDo
 - Improve styles.css
 - Primefactors 2-100
-- Create interative trainers
+- Create interactive trainers
