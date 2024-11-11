@@ -1,5 +1,13 @@
 // Function to generate exponential numbers
 
+/**
+ * 
+ * @param {*} num 
+ * num: int and 0<=num<=9
+ * @returns the string for the exponent: Example ³
+ * 
+ */
+
 function toSuperscript(num) {
     const superscripts = {
         '0': '\u2070',
@@ -16,10 +24,6 @@ function toSuperscript(num) {
     return num.toString().split('').map(digit => superscripts[digit] || digit).join('');
 }
 
-let base = 2;
-let exponent = 3;
-let powerString = base + toSuperscript(exponent);
-console.log(powerString); // Output: 2³
 
 
 
@@ -30,6 +34,7 @@ console.log(powerString); // Output: 2³
  * ToDo: Expand to other exponents
  * ToDo: Make more modular
  */
+
 function generateSquareNumbers(rangeMin, rangeMax, exponent) {
     let squares = [];
     
@@ -49,7 +54,7 @@ function generateSquareNumbers(rangeMin, rangeMax, exponent) {
 function displaySquareNumbers() {
     //hardcoded for the moment
     let squares = generateSquareNumbers(0,100,2);
-    let list = document.getElementById('squareNumbers');
+    let list = document.getElementById('squareNumbers'); // Has to be included in the html page
     squares.forEach(number => {
         let listItem = document.createElement('li');
         listItem.textContent = number;
