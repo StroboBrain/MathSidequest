@@ -62,4 +62,26 @@ function displaySquareNumbers() {
     });
 }
 
+/**
+ * 
+ * @param {*} power 
+ * @param {*} minRange 
+ * @param {*} maxRange
+ * @param {*} numberOfTasks
+ */
+function generateTasks(power, minRange, maxRange, numberOfTasks){
+    let tasks = [];
+    let increase = Math.floor((maxRange-minRange)/10);
+    if (increase<=1){
+        console.log("generateTask Times",times);
+    }
+
+    for (k = minRange; k<=maxRange;k++){
+        tasks.push(k,Math.pow(k,power));
+    }
+
+    
+}
+
+
 window.onload = displaySquareNumbers;
