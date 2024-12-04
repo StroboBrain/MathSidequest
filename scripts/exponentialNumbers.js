@@ -69,7 +69,7 @@ function displaySquareNumbers() {
  * @param {*} maxRange
  * @param {*} numberOfTasks
  */
-function generateTasks(power, minRange, maxRange, numberOfTasks){
+function generateTasks(power, minRange, maxRange){
     let tasks = [];
     let increase = Math.floor((maxRange-minRange)/10);
     if (increase<=1){
@@ -80,8 +80,20 @@ function generateTasks(power, minRange, maxRange, numberOfTasks){
         tasks.push(k,Math.pow(k,power));
     }
 
-    
+    return tasks
+
 }
+
+//Hardcoded prototype
+function squareNumberQuestion(html_IDname){
+
+    let list = document.getElementById(html_IDname);
+    
+
+
+
+}
+
 
 
 window.onload = displaySquareNumbers;

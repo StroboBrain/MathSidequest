@@ -3,15 +3,16 @@
  */
 
 
-class Task {
+class BasicTask {
 
     constructor(solution, taskAsString) {
         this.solution = solution;
         this.taskAsString = taskAsString;
+        console.assert(eval(this.taskAsString + solution),"Solution does not fit task");
     }
 
     logTask() {
-        console.log(`Task: ${this.name}, Description: ${this.description}`);
+        console.log(`Task: ${this.taskAsString},Solution: ${this.solution}, `);
     }
 
     // check if a solution is valid for a specific task
@@ -33,5 +34,5 @@ class TaskList {
 }
 
 // Named export
-export { Task };
+export { BasicTask };
 export {TaskList};
