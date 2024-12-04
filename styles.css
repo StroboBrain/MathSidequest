@@ -1,16 +1,25 @@
-.container {
-    border: 2px solid black; /* Black border */
-    width: 300px; /* Width of the container */
-    height: 300px; /* Height of the container */
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    position: relative;
-    margin: 0 auto; /* Center the container on the page */
-    top: 50px; /* Adjust the top position as needed */
-  }
-  
-  #movingButton {
-    position: absolute;
-  }
-  
+/* Css originally by mejobloggs  Design by Aran @ stuio7designs.com  Please email me if you use this, as I would love to see how it is being used, also you can join my linkshare to help you with your google ranking */
+
+
+
+body {
+	font-family: trebuchet ms, verdana, arial, tahoma;
+	font-size: 90%;
+	color: #2c2c2c;
+	background-color: rgb(114, 216, 204);
+	line-height: 180%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+
+
+header h1 {
+	margin: 0 20px;
+	padding: 0;
+	height: 192px;
+	line-height: 3em;
+	color: #140eb9;
+	font-size: 130%;
+}
