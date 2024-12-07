@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" type="text/css" href="cssExtended/diceSimulator.css">
+
+  <title>Dice Simulator</title>
+</head>
+<body>
+  <button id="rollButton">Roll the Dice</button>
+  <div id="diceResult">Roll the dice to see the result!</div>
+
+  <script>
+    document.getElementById("rollButton").addEventListener("click", function() {
+      const result = Math.floor(Math.random() * 6) + 1;
+      document.getElementById("diceResult").textContent = "You rolled a " + result;
+    });
+  </script>
+</body>
+</html>
