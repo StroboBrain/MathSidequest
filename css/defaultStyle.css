@@ -27,7 +27,7 @@ body {
 .content {
     background-color: var(--darkerBlue);
     aspect-ratio: 18/39;
-    height: 100vh;
+    height: 105vh;
     display: grid;
     grid-template-columns: repeat(18, 1fr); /* 18 equal-width columns */
     grid-template-rows: repeat(39, 1fr);   /* 39 rows with height based on content */
