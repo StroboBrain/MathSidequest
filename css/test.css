@@ -1,26 +1,34 @@
 body {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 18 equal-width columns */
-    background-color: rgb(247, 158, 49);
+    grid-template-rows: 1fr 1fr 1fr; /* 18 equal-width columns */
+    height: 100vh;
+    margin: 0;
+    background-color: rgb(255, 0, 0);
 }
 
 .contenContainer {
+    width: 100vw;
+    height: 100vh;
     background-color: brown;
     display: flex;
 }
 
 .headerBackground {
+    width: 100vw;
+    height: 20vh;
     background-color: blue;
-    width: 100%;
-    height: 200%;
 }
 
 
 .middleBackground {
+    width: 100vw;
+    height: 60vh;
     background-color: rgb(25, 191, 31);
 }
 
 
 .bottomToolbarBackground {
+    width: 100vw;
+    height: 20vh;
     background-color: rgb(255, 102, 0);
 }
