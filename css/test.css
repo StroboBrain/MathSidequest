@@ -1,34 +1,31 @@
 body {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr; /* 18 equal-width columns */
-    height: 100vh;
     margin: 0;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(247, 158, 49);
 }
 
 .contenContainer {
-    width: 100vw;
+    display: grid;
+    grid-template-rows: 2fr 6fr 2fr;
     height: 100vh;
+    width: 100vw;
     background-color: brown;
-    display: flex;
 }
 
 .headerBackground {
-    width: 100vw;
-    height: 20vh;
+    grid-row: 1;
     background-color: blue;
 }
 
 
 .middleBackground {
-    width: 100vw;
-    height: 60vh;
+    height: 100%;
+    width: 100%;
     background-color: rgb(25, 191, 31);
 }
 
 
-.bottomToolbarBackground {
-    width: 100vw;
-    height: 20vh;
+.bottomToolbarBackground {    
+    height: 100%;
+    width: 100%;
     background-color: rgb(255, 102, 0);
 }
