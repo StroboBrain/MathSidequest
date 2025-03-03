@@ -6,8 +6,8 @@ body {
 .contenContainer {
     display: grid;
     grid-template-rows: 2fr 6fr 2fr;
-    height: 100dvh;   
-    width: 100dvw;
+    height: 100svh;   
+    width: 100svw;
     background-color: brown;
 }
 
