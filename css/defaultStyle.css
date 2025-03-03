@@ -19,24 +19,21 @@ body {
     display: flex;
     justify-content: center; /* Centers horizontally */
     align-items: center; /* Centers vertically */
-    height: 100vh; /* Full viewport height */
-    width: 100vw; /* Full viewport width */
+    height: 100dvh; /* Full viewport height */
+    width: 100dvw; /* Full viewport width */
     font-family: 'DefaultFont'; /* Currently Chakra Petch*/
 }
 
 .content {
     background-color: var(--darkerBlue);
     aspect-ratio: 18/39;
-    height: 105vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: repeat(18, 1fr); /* 18 equal-width columns */
     grid-template-rows: repeat(39, 1fr);   /* 39 rows with height based on content */
-
 }
 
 .headerToolbar {
-    max-width: 100%;
-    max-height: 100%;
     grid-column: 1/19;
     grid-row: 1/6;
     background-color: var(--darker2Blue);

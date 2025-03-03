@@ -5,6 +5,7 @@ body {
 
 .contenContainer {
     margin: 0;
+    padding: 0;
     display: grid;
     grid-template-rows: 2fr 6fr 2fr;
     height: 100dvh;   
@@ -13,16 +14,22 @@ body {
 }
 
 .headerBackground {
+    margin: 0;
+    padding: 0;
     grid-row: 1;
     background-color: blue;
 }
 
 .middleBackground {
+    margin: 0;
+    padding: 0;
     grid-row: 2;
     background-color: rgb(25, 191, 31);
 }
 
-.bottomToolbarBackground {    
+.bottomToolbarBackground { 
+    margin: 0;
+    padding: 0;   
     grid-row: 3;
     background-color: rgb(255, 102, 0);
 }
