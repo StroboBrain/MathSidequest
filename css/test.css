@@ -6,7 +6,7 @@ body {
 .contenContainer {
     display: grid;
     grid-template-rows: 2fr 6fr 2fr;
-    height: 100vh;
+    height: 100vh;    
     width: 100vw;
     background-color: brown;
 }
@@ -16,16 +16,12 @@ body {
     background-color: blue;
 }
 
-
 .middleBackground {
-    height: 100%;
-    width: 100%;
+    grid-row: 2;
     background-color: rgb(25, 191, 31);
 }
 
-
 .bottomToolbarBackground {    
-    min-height: 100%;
-    width: 100%;
+    grid-row: 3;
     background-color: rgb(255, 102, 0);
 }
