@@ -5,7 +5,7 @@
     --darkerBlue: #6977d3;
     --darker2Blue: #8778b5;
     --lightViolet: #8f65a2;
-    --bseViolet: #94528c;
+    --baseViolet: #94528c;
     --darkViolet: #973e72;
     margin: 0;
     font-size: 4.5vh;
@@ -17,11 +17,12 @@ body {
     margin: 0;
     background-color: var(--lightBlue);
     display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
-    height: 100dvh; /* Full viewport height */
-    width: 100dvw; /* Full viewport width */
+    justify-content: center; 
+    align-items: center;
+    height: 100dvh; 
+    width: 100dvw; 
     font-family: 'DefaultFont'; /* Currently Chakra Petch*/
+    background-color: var(--baseViolet);
 }
 
 .content {
@@ -32,6 +33,9 @@ body {
     grid-template-columns: repeat(18, 1fr); /* 18 equal-width columns */
     grid-template-rows: repeat(39, 1fr);   /* 39 rows with height based on content */
 }
+
+
+
 
 .headerToolbar {
     grid-column: 1/19;
@@ -47,6 +51,70 @@ body {
     align-items: center;
     font-size: 1rem;
 }
+
+
+
+.contenContainer {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: 2fr 6fr 2fr;
+  height: 100dvh;   
+  width: 100dvw;
+  background-color: brown;
+}
+
+.headerBackground {
+  margin: 0;
+  padding: 0;
+  grid-row: 1;
+  background-color: var(--darkerBlue);
+}
+
+.middleBackground {
+  margin: 0;
+  padding: 0;
+  grid-row: 2;
+  background-color: var(--lightBlue);
+}
+
+.bottomToolbarBackground { 
+  margin: 0;
+  padding: 0;   
+  grid-row: 3;
+  background-color:var(--baseViolet);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
