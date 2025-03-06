@@ -4,7 +4,7 @@ import IsPrimeModel from "../games/isPrime/isPrimeModel.js";
 
 
 describe('check IsPrimeModel prime set', () => {
-    it('', () => {
+    it('check the the set', () => {
 
         const check = IsPrimeModel.PRIME_SET;
 
@@ -13,6 +13,16 @@ describe('check IsPrimeModel prime set', () => {
         }
 
     });
+
+    it("Taskarray", () => {
+        const temp = new IsPrimeModel();
+        const testArray = temp.createTaskArray(3,3);
+        console.log(testArray);
+
+        expect(testArray.length).toBe(6);
+    });
+
+
 
 });
 

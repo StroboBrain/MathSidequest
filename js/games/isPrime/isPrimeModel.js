@@ -7,7 +7,7 @@ export default class IsPrimeModel {
     }
 
     // Returns an array of random primes from PRIME_SET
-    getRandomPrime(amount) {
+    genenrateRandomPrime(amount) {
         // Convert the static set to an array
         let primes = Array.from(IsPrimeModel.PRIME_SET);
         let primesToReturn = [];
@@ -30,12 +30,39 @@ export default class IsPrimeModel {
         for (let i = 0; i<amount; i++) {
             let temp = Math.floor(Math.random()*120);
             // If the number is not prime, it will be added to the array
-            if (!IsPrimeModel.PRIME_SET.hat(temp)){
+            if (!this.#checkIfPrime(temp)){
                 numberArray.push(temp);
             } else {
                 numberArray.push(1+temp);
             }
         }
+        return numberArray;
     }
+
+    createTaskArray(amountPrime,amountNonPrime) {
+        let nonPrimes = this.generateRandomNonPrimes(amountNonPrime);
+        let primes = this.genenrateRandomPrime(amountPrime);
+        let result = []
+
+        // Randomly choose the numbers
+        while (nonPrimes.length>0 && primes.length>0){
+            if (Math.random() < 0.5) {
+                result.push(primes.pop());
+            } else {
+                result.push(nonPrimes.pop());
+            }
+        }
+        // Add the rest
+        result = result.concat(primes).concat(nonPrimes);
+        return result;
+    }
+
+    // Private functions
+
+    #checkIfPrime(number){
+        return IsPrimeModel.PRIME_SET.has(number);
+    }
+
+
     
 }
