@@ -1,10 +1,12 @@
 import Dummy from "../games/isPrime/dummy";
-import { describe,test, it, expect, assert} from "vitest";
+import { describe, test, it, expect, assert } from "vitest";
 
-var dummy = new Dummy();
+// Create an instance of Dummy
+const dummy = new Dummy();
 
-
-test("lol",() => {
-    assert(dummy.returnTrue());
-
-})
+describe("Dummy Class", () => {
+    test("returnTrue() should return true", () => {
+        // Alternatively, you can use expect for better readability
+        expect(dummy.returnTrue()).toBe(true);
+    });
+});

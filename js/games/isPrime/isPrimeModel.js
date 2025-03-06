@@ -1,19 +1,41 @@
-export class isPrimeModel {
+export default class IsPrimeModel {
+    // Static field containing a set of prime numbers
+    static PRIME_SET = new Set([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113]);
 
     constructor() {
-
-        // Set of the first 30 Prime Numbers
-        this.primeSet = new Set([2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113]);
-        this.taskList = [2];
+        // Constructor can be empty if no instance-specific initialization is needed
     }
 
+    // Returns an array of random primes from PRIME_SET
+    getRandomPrime(amount) {
+        // Convert the static set to an array
+        let primes = Array.from(IsPrimeModel.PRIME_SET);
+        let primesToReturn = [];
 
+        for (let i = 0; i < amount; i++) {
+            // Generate a random index
+            let randomIndex = Math.floor(Math.random() * primes.length);
+            // Add the randomly selected prime to the result array
+            primesToReturn.push(primes[randomIndex]);
+            // Remove the selected prime from the array to avoid duplicates
+            primes.splice(randomIndex, 1);
+        }
+        return primesToReturn;
+    }
 
-    createTask() {
-        console.log(this.taskList);
-        console.log(this.taskList);
-
-    } 
-
-
+    generateRandomNonPrimes(amount){
+        // Current maximum set at 120
+        const maxRange = 120;
+        let numberArray = [];
+        for (let i = 0; i<amount; i++) {
+            let temp = Math.floor(Math.random()*120);
+            // If the number is not prime, it will be added to the array
+            if (!IsPrimeModel.PRIME_SET.hat(temp)){
+                numberArray.push(temp);
+            } else {
+                numberArray.push(1+temp);
+            }
+        }
+    }
+    
 }
