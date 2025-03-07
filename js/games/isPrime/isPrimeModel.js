@@ -30,7 +30,7 @@ export default class IsPrimeModel {
         for (let i = 0; i<amount; i++) {
             let temp = Math.floor(Math.random()*120);
             // If the number is not prime, it will be added to the array
-            if (!this.#checkIfPrime(temp)){
+            if (!this.checkIfPrime(temp)){
                 numberArray.push(temp);
             } else {
                 numberArray.push(1+temp);
@@ -59,10 +59,8 @@ export default class IsPrimeModel {
 
     // Private functions
 
-    #checkIfPrime(number){
+    checkIfPrime(number){
         return IsPrimeModel.PRIME_SET.has(number);
     }
 
-
-    
 }

@@ -18,11 +18,8 @@ describe('check IsPrimeModel prime set', () => {
         const temp = new IsPrimeModel();
         const testArray = temp.createTaskArray(3,3);
         console.log(testArray);
-
         expect(testArray.length).toBe(6);
     });
-
-
 
 });
 
