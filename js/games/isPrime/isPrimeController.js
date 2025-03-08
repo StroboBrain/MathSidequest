@@ -3,10 +3,11 @@ import { IsPrimeView } from "./isPrimeView.js";
 
 export default class IsPrimeController{
 
-    constructor(divParent){
+    constructor(divParent, yesButton, noButton){
         this.isPrimeModel = new IsPrimeModel();
-        this.isPrimeView = new IsPrimeView(divParent);
-        this.createTasks(3,6);
+        this.isPrimeView = new IsPrimeView(divParent,yesButton,noButton);
+        // Default value
+        this.createTasks(3, 6);
         this.activeTask = this.taskArray.pop();
         this.displayActiveTask();
     }
@@ -15,8 +16,8 @@ export default class IsPrimeController{
         return this.isPrimeModel.isPrime(number);
     }
 
-    createTasks(nonPrimeAmount, primeAmount) {
-        this.taskArray = this.isPrimeModel.createTaskArray(3,6);
+    createTasks(primeAmount, nonPrimeAmount) {
+        this.taskArray = this.isPrimeModel.createTaskArray(primeAmount,nonPrimeAmount);
     }
 
     nextTask(){
@@ -34,6 +35,10 @@ export default class IsPrimeController{
     displayActiveTask(){
         this.isPrimeView.upDateContent(this.activeTask);
     }
+
+
+
+
 
 
 

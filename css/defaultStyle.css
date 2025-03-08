@@ -46,7 +46,6 @@ body {
 }
 
 .headerContainer {
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +61,7 @@ body {
 .bottomToolbarBackground { 
   padding: 0;   
   grid-row: 3;
-  background-color:var(--baseViolet);
+  background-color:var(--darker2Blue);
   display: flex;
   justify-content: center; /* Centers text horizontally */
   align-items: center;
@@ -77,12 +76,10 @@ body {
   width: 90%;
 }
 
-
-
 .bottomToolbar {
   display: flex;
   gap: 8%;
-  height:80%;
+  height:70%;
   width: 100%;
   padding-left: 8%;
   padding-right: 8%;

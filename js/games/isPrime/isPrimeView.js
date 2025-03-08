@@ -1,8 +1,9 @@
 // Creates the html element to display the game
 
 export class IsPrimeView {
-    constructor(parentDiv){
+    constructor(parentDiv, yesButton, noButton){
         this.parentDiv = parentDiv;
+        this.addYesButton(yesButton);
         this.createGameDisplayDiv();
         this.addGameDisplayDiv();
     }
@@ -22,5 +23,13 @@ export class IsPrimeView {
         this.gameDisplay.innerHTML = content;
     }
 
-}
+    addYesButton(buttonDiv){
+        buttonDiv.innerHTML ="yes";
+        buttonDiv.addEventListener("click", () => this.checkSolution(true));
+    }
 
+    checkSolution(boolAnswer){
+        console.log("yes");
+    }
+
+}
