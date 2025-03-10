@@ -1,13 +1,19 @@
 // Creates the html element to display the game
 
 export class IsPrimeView {
-    constructor(parentDiv, yesButton, noButton, isPrimeController){
+    constructor(titleDiv, parentDiv, yesButton, noButton, isPrimeController){
         this.isPrimeController = isPrimeController;
+        this.titleDiv = titleDiv;
         this.parentDiv = parentDiv;
         this.addYesButton(yesButton);
         this.addNoButton(noButton);
         this.createGameDisplayDiv();
         this.addGameDisplayDiv();
+        this.setTitleDiv();
+    }
+
+    setTitleDiv(){
+        this.titleDiv.innerHTML = "IS IT PRIME?"
     }
 
     createGameDisplayDiv(){
@@ -44,7 +50,19 @@ export class IsPrimeView {
     }
 
     answered(input){
-        return;
+        if (input){
+            this.flashBackground(this.parentDiv,400,"green");
+        } else {
+            this.flashBackground(this.parentDiv,400,"red");
+        }
+    }
+
+    flashBackground(div,duration,color){
+        div.style.backgroundColor = color;
+        setTimeout(() => {
+            div.style.background = ""; // Revert to the original background
+          }, duration);
+
     }
 
 }

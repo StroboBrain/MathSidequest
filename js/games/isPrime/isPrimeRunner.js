@@ -4,11 +4,12 @@ import IsPrimeController from "./isPrimeController.js";
 
 
 window.addEventListener("load", function() {
-    var contentDiv = document.getElementsByClassName("centerContentContainer")[0];
+    let titleDiv = this.document.getElementsByClassName("titleText")[0];
+    let contentDiv = document.getElementsByClassName("centerContentContainer")[0];
     let yesButton = document.getElementsByClassName("leftButton")[0];
     let noButton = document.getElementsByClassName("rightButton")[0];
     
-    // Primes and nonPrimes
-    let taskArguments = [3,6];
-    var isPrimeController = new IsPrimeController(contentDiv,yesButton, noButton,taskArguments);
+    // Primes, nonPrimes, lives
+    let taskArguments = [3,6,2];
+    var isPrimeController = new IsPrimeController(titleDiv,contentDiv,yesButton, noButton,taskArguments);
 });
