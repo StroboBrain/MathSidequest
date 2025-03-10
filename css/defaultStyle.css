@@ -58,6 +58,21 @@ body {
   background-color: var(--darkerBlue);
 }
 
+.centerContentContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center; 
+  justify-content: center;
+}
+
+.gameDisplay {
+  flex-grow: 1; /* Make the text grow to fill the space */
+  text-align: center;
+  font-size: clamp(25px, 30vh,30vmin);
+}
+
 .bottomToolbarBackground { 
   padding: 0;   
   grid-row: 3;

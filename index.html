@@ -22,9 +22,13 @@
     <!-- preloads -->
     <link rel="preload" href="resources/fonts/Chakra_Petch/ChakraPetch-Regular.ttf" as="font" type="font/ttf" crossorigin> 
 
+    <!-- css -->
+    <link rel="stylesheet" href="css/defaultStyle.css">
+
     <!-- scripts -->
     <link rel="manifest" href="pwa-manifest.json">
-    <link rel="stylesheet" href="css/defaultStyle.css">
+    <script type='text/javascript' src="js/main.js"></script>
+    <script type="module" src="js/games/isPrime/isPrimeRunner.js"></script>
     <script type='text/javascript' src="js/main.js"></script>
 </head>
 <body>
@@ -33,12 +37,12 @@
             <div class="headerToolbar">MATH SIDEQUEST</div>
         </div>
         <div class="centerBackground">
-            <div class="centernContentContainer"></div>
+            <div class="centerContentContainer"></div>
         </div>
         <div class="bottomToolbarBackground">
             <div class="bottomToolbar">
-                <button class="bottomToolbarButton helpButton">HELP</button>
-                <button class="bottomToolbarButton startButton">START</button>
+                <button class="bottomToolbarButton helpButton leftButton">HELP</button>
+                <button class="bottomToolbarButton startButton rightButton">START</button>
             </div>
         </div>
     </div>    

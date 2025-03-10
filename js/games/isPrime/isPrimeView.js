@@ -1,16 +1,17 @@
 // Creates the html element to display the game
 
 export class IsPrimeView {
-    constructor(parentDiv, yesButton, noButton){
+    constructor(parentDiv, yesButton, noButton, isPrimeController){
+        this.isPrimeController = isPrimeController;
         this.parentDiv = parentDiv;
         this.addYesButton(yesButton);
+        this.addNoButton(noButton);
         this.createGameDisplayDiv();
         this.addGameDisplayDiv();
     }
 
     createGameDisplayDiv(){
         this.gameDisplay = document.createElement("div");
-        console.log(this.gameDisplay);
         this.gameDisplay.className = "gameDisplay";
         this.gameDisplay.id = "isPrimeGame";
     }
@@ -20,16 +21,30 @@ export class IsPrimeView {
     }
 
     upDateContent(content){
+        console.log(content);
         this.gameDisplay.innerHTML = content;
     }
 
     addYesButton(buttonDiv){
-        buttonDiv.innerHTML ="yes";
+        buttonDiv.innerHTML ="YES";
         buttonDiv.addEventListener("click", () => this.checkSolution(true));
     }
 
+    addNoButton(buttonDiv){
+        buttonDiv.innerHTML ="NO";
+        buttonDiv.addEventListener("click", () => this.checkSolution(false));
+    }
+
     checkSolution(boolAnswer){
-        console.log("yes");
+        this.isPrimeController.answerPressed(boolAnswer);
+    }
+
+    gameOver(){
+        this.upDateContent("GAME OVER");
+    }
+
+    answered(input){
+        return;
     }
 
 }

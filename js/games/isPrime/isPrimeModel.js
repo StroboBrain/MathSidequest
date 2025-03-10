@@ -62,5 +62,6 @@ export default class IsPrimeModel {
     checkIfPrime(number){
         return IsPrimeModel.PRIME_SET.has(number);
     }
+    
 
 }
