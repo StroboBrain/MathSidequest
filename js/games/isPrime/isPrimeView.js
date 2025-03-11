@@ -5,20 +5,28 @@ export class IsPrimeView {
         this.isPrimeController = isPrimeController;
         this.titleDiv = titleDiv;
         this.parentDiv = parentDiv;
-        this.addYesButton(yesButton);
-        this.addNoButton(noButton);
+        this.yetButton = yesButton;
+        this.noButton = noButton;
         this.createGameDisplayDiv();
-        this.addGameDisplayDiv();
-        this.setTitleDiv();
+
+
     }
 
     setTitleDiv(){
         this.titleDiv.innerHTML = "IS IT PRIME?"
     }
 
+    setUpDisplay(){
+        this.addYesButton(this.yetButton);
+        this.addNoButton(this.noButton);
+        this.addGameDisplayDiv();
+        this.setTitleDiv();
+    }
+
     createGameDisplayDiv(){
         this.gameDisplay = document.createElement("div");
         this.gameDisplay.className = "gameDisplay";
+        //this.gameDisplay.style.display = "none";
         this.gameDisplay.id = "isPrimeGame";
     }
 

@@ -9,13 +9,11 @@ export default class IsPrimeController{
         this.isPrimeView = new IsPrimeView(titleDiv,divParent,yesButton,noButton,this);
 
         // Represention the game state
-
         this.gameIsRunning = false;
         this.taskArguments = taskArguments;
         // load values from the taskArguments
 
         this.setTaskArguments(taskArguments);
-
         this.createTasks();
 
         //set the first default task
@@ -38,13 +36,12 @@ export default class IsPrimeController{
     }
 
     startGame(){
-        createTasks();
+        this.createTasks();
+        // Set the lives to the start amount
         this.lives = this.taskArguments[2];
         this.gameIsRunning = true;
+        this.isPrimeView.setUpDisplay();
     }
-
-
-
 
     nextTask(){
         if (this.isGameOver()){
@@ -84,7 +81,5 @@ export default class IsPrimeController{
         else if (this.taskArray.length===0) return true;
         return false;
     }
-
-
 
 }

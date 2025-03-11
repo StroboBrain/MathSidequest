@@ -12,4 +12,5 @@ window.addEventListener("load", function() {
     // Primes, nonPrimes, lives
     let taskArguments = [3,6,2];
     var isPrimeController = new IsPrimeController(titleDiv,contentDiv,yesButton, noButton,taskArguments);
+    isPrimeController.startGame();
 });
