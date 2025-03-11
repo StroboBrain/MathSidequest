@@ -8,12 +8,14 @@
     --baseViolet: #94528c;
     --darkViolet: #973e72;
     font-size: 4dvh;
+    font-family: 'DefaultFont'; /* Currently Chakra Petch*/
 }
 
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: inherit; 
 }
 
 body {
@@ -24,7 +26,6 @@ body {
     align-items: center;
     height: 100dvh; 
     width: 100dvw;
-    font-family: 'DefaultFont'; /* Currently Chakra Petch*/
     background-color: var(--baseViolet);
 }
 
@@ -56,14 +57,18 @@ body {
 .centerBackground {
   grid-row: 2;
   background-color: var(--darkerBlue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .centerContentContainer {
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
+  gap: 3%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  align-content: center; 
   justify-content: center;
 }
 
@@ -107,14 +112,25 @@ body {
   background-color: var(--lightBlue);
   border-color: var(--darkerBlue);
   border-style: solid;
-  border-width: 0.1em;
-  border-radius: 0.9em;
+  border-width: 0.1rem;
+  border-radius: 0.9rem;
 }
 
 
 .startButton {
   width: 100%;
   height: 100%;
+}
+
+.menuButton{
+  font-size: 1rem;
+  width: 100%;
+  height: 100%;
+  background-color: var(--lightBlue);
+  border-color: var(--darker2Blue);
+  border-style: solid;
+  border-width: 0.1rem;
+  border-radius: 0.9rem;
 }
 
 

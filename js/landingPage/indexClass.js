@@ -29,9 +29,7 @@ export default class IndexClass {
     }
 
     setUpDisplay(){
-        console.log(this.buttonArray);
         for (const tempButton of this.buttonArray){
-            console.log(tempButton + "button");
             this.containerToAddMenu.appendChild(tempButton);
         }
     }
