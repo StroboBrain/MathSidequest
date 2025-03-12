@@ -9,12 +9,12 @@
     --darkViolet: #973e72;
     font-size: 4dvh;
     font-family: 'DefaultFont'; /* Currently Chakra Petch*/
+    box-sizing: border-box;
 }
 
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: inherit; 
 }
 
@@ -29,14 +29,10 @@ body {
     background-color: var(--baseViolet);
 }
 
-.pageTitle {
-    grid-column: 1/19;
-    grid-row: 1/6;
-    display: flex;    
-    justify-content: center;
-    align-items: center;
-}
 
+
+
+/* containers and backgrounds */
 .contenContainer {
   display: grid;
   grid-template-rows: 10fr 75fr 15fr;
@@ -62,21 +58,6 @@ body {
   justify-content: center;
 }
 
-.centerContentContainer {
-  height: 80%;
-  width: 80%;
-  gap: 3%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.gameDisplay {
-  flex-grow: 1; /* Make the text grow to fill the space */
-  text-align: center;
-  font-size: clamp(25px, 30vh,30vmin);
-}
 
 .bottomToolbarBackground { 
   padding: 0;   
@@ -87,14 +68,19 @@ body {
   align-items: center;
 }
 
+/* Header */
 
 .headerToolbar {
+  font-size: clamp(1rem, 6vh, 2rem);
   display: flex;
   justify-content: center; /* Centers text horizontally */
   align-items: center;
   height: 80%;
   width: 90%;
 }
+
+
+/* Footer */
 
 .bottomToolbar {
   display: flex;
@@ -106,9 +92,11 @@ body {
 }
 
 .bottomToolbarButton{
-  font-size: 1rem;
+  font-size: clamp(1rem, 8vw, 4rem);
   width: 100%;
   height: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
   background-color: var(--lightBlue);
   border-color: var(--darkerBlue);
   border-style: solid;
@@ -122,14 +110,25 @@ body {
   height: 100%;
 }
 
+.centerContentContainer {
+  height: 80%;
+  width: 80%;
+  gap: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .menuButton{
-  font-size: 1rem;
+  font-size: clamp(1.5rem, 10vw, 4rem);
   width: 100%;
   height: 100%;
   background-color: var(--lightBlue);
   border-color: var(--darker2Blue);
   border-style: solid;
-  border-width: 0.1rem;
+  border-width: 0.15rem;
   border-radius: 0.9rem;
 }
 
@@ -142,7 +141,12 @@ body {
 
 
 
-
+/* Game display */
+.gameDisplay {
+  flex-grow: 1; /* Make the text grow to fill the space */
+  text-align: center;
+  font-size: clamp(25px, 30vh,30vmin);
+}
 
 
 
