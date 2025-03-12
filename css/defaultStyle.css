@@ -7,7 +7,7 @@
     --lightViolet: #8f65a2;
     --baseViolet: #94528c;
     --darkViolet: #973e72;
-    font-size: 4dvh;
+    font-size: clamp(1rem, 4vw, 4vw);
     font-family: 'DefaultFont'; /* Currently Chakra Petch*/
     box-sizing: border-box;
 }
@@ -91,17 +91,27 @@ body {
   padding-right: 8%;
 }
 
+.bottomToolbarText {
+  font-size: clamp(1rem, 2rem, 3rem);
+}
+
 .bottomToolbarButton{
-  font-size: clamp(1rem, 8vw, 4rem);
-  width: 100%;
-  height: 100%;
   padding-left: 4%;
   padding-right: 4%;
+}
+
+.defaultButtonStyle{
+  font-size: clamp(1rem, 6vw, 4rem);
   background-color: var(--lightBlue);
   border-color: var(--darkerBlue);
   border-style: solid;
   border-width: 0.1rem;
   border-radius: 0.9rem;
+}
+
+.topBackButton{
+  margin: 3%;
+  padding: 4%;
 }
 
 .startButton {
@@ -140,7 +150,8 @@ body {
 
 
 .helpButton {
-
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -151,7 +162,8 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: clamp(25px, 30vh,40vmin);
+  font-size: clamp(25px, 30vh,35vmin);
+  overflow: hidden;
 }
 
 
