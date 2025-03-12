@@ -91,9 +91,7 @@ body {
   padding-right: 8%;
 }
 
-.bottomToolbarText {
-  font-size: clamp(1rem, 2rem, 3rem);
-}
+
 
 .bottomToolbarButton{
   padding-left: 4%;
@@ -152,6 +150,12 @@ body {
 .helpButton {
   width: 100%;
   height: 100%;
+}
+
+
+/* index.html */
+.bottomToolbarText {
+  font-size: clamp(1rem, 2rem, 3rem);
 }
 
 
