@@ -2,9 +2,7 @@ import IsPrimeController from "./isPrimeController.js";
 
 // This class is responsible for linking up the buttons
 
-export default class IsPrimeModel {
-    
-
+export default class IsPrimeRunner {
     addButtons(){
         this.titleDiv = document.getElementsByClassName("titleText")[0];
         this.contentDiv = document.getElementsByClassName("centerContentContainer")[0];
