@@ -1,0 +1,270 @@
+:root  {
+    --almostBlack: #232323;
+    --lightBlue: #b4cde6;
+    --baseBlue: #7b9acd;
+    --darkerBlue: #6977d3;
+    --darker2Blue: #8778b5;
+    --lightViolet: #8f65a2;
+    --baseViolet: #94528c;
+    --darkViolet: #973e72;
+    font-size: 4dvh;
+    font-family: 'DefaultFont'; /* Currently Chakra Petch*/
+    box-sizing: border-box;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: inherit; 
+}
+
+body {
+    overflow: hidden;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: var(--darker2Blue);
+}
+
+/* containers and backgrounds */
+.contenContainer {
+  display: grid;
+  grid-template-rows: 10fr 75fr 15fr;
+  height: 100%;
+  width: 100%;
+  /* mobile first approach */
+  max-width: 60dvh;
+  background-color: brown; /* debug color */
+  overflow: hidden;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 1;
+  background-color: var(--darker2Blue);
+}
+
+.centerBackground {
+  grid-row: 2;
+  background-color: var(--darkerBlue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.bottomToolbarBackground { 
+  padding: 0;   
+  grid-row: 3;
+  background-color:var(--darker2Blue);
+  display: flex;
+  justify-content: center; /* Centers text horizontally */
+  align-items: center;
+}
+
+/* Header */
+.headerToolbar {
+  font-size: clamp(1rem, 6vh, 2rem);
+  display: flex;
+  justify-content: center; /* Centers text horizontally */
+  align-items: center;
+  height: 80%;
+  width: 90%;
+}
+
+/* Footer */
+.bottomToolbar {
+  display: flex;
+  gap: 8%;
+  height:70%;
+  width: 100%;
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.bottomToolbarButton{
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.defaultButtonStyle{
+  font-size: clamp(1rem, 6vw, 4rem);
+  background-color: var(--lightBlue);
+  border-color: var(--darkerBlue);
+  border-style: solid;
+  border-width: 0.1rem;
+  border-radius: 0.9rem;
+}
+
+.topBackButton{
+  margin: 3%;
+  padding: 4%;
+}
+
+.startButton {
+  width: 100%;
+  height: 100%;
+}
+
+.centerContentContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerButtonContainer {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr); 
+  gap: 3%;
+  height: 80%; 
+  width: 80%;
+  max-height: 80%;
+  max-width: 80%;
+  place-items: center; /* Center buttons horizontally and vertically */
+  margin: auto; /* Center the container itself */
+}
+
+.menuButton {
+  font-size: clamp(1rem, 1.5rem, 1.5rem); /* Responsive font size */
+  width: 100%; /* Make buttons fill their grid cells */
+  height: 100%; /* Make buttons fill their grid cells */
+  max-width: 100%; /* Prevent overflow */
+  max-height: 100%; /* Prevent overflow */
+  background-color: var(--lightBlue); /* Custom background color */
+  border-color: var(--darker2Blue); /* Custom border color */
+  border-style: solid;
+  border-width: 0.15rem;
+  border-radius: 0.9rem; /* Rounded corners */
+  padding: 1%; /* Padding inside buttons */
+  display: flex; /* Use flexbox for centering content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow */
+  text-overflow: ellipsis; /* Add ellipsis for overflow text */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+
+.helpButton {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* index.html */
+.bottomToolbarText {
+  font-size: clamp(1rem, 1.5rem, 2rem);
+}
+
+/* Game display */
+.gameDisplay {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(25px, 30vh,35vmin);
+  overflow: hidden;
+}
+
+/* Media  work ing progress*/
+@media (max-aspect-ratio: 1/1) {
+  .contenContainer {
+    aspect-ratio: 9/16;
+    background-color: black;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Adding the font, might remove some not needed styles */
+@font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-Regular.ttf') format('truetype');
+    font-weight: 400; /* Normal */
+    font-style: normal;
+  }
+  
+  /* Italic */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-Italic.ttf') format('truetype');
+    font-weight: 400; /* Normal */
+    font-style: italic;
+  }
+  
+  /* Light */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-Light.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: normal;
+  }
+  
+  /* Light Italic */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-LightItalic.ttf') format('truetype');
+    font-weight: 300; /* Light */
+    font-style: italic;
+  }
+  
+  /* Medium */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-Medium.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: normal;
+  }
+  
+  /* Medium Italic */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-MediumItalic.ttf') format('truetype');
+    font-weight: 500; /* Medium */
+    font-style: italic;
+  }
+  
+  /* SemiBold */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-SemiBold.ttf') format('truetype');
+    font-weight: 600; /* SemiBold */
+    font-style: normal;
+  }
+  
+  /* SemiBold Italic */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600; /* SemiBold */
+    font-style: italic;
+  }
+  
+  /* Bold */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-Bold.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: normal;
+  }
+  
+  /* Bold Italic */
+  @font-face {
+    font-family: 'DefaultFont';
+    src: url('../resources/fonts/Chakra_Petch/ChakraPetch-BoldItalic.ttf') format('truetype');
+    font-weight: 700; /* Bold */
+    font-style: italic;
+  }
