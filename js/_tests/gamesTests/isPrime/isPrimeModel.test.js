@@ -1,5 +1,5 @@
 import { describe,test, it, expect, assert} from "vitest";
-import IsPrimeModel from "../games/isPrime/isPrimeModel.js";
+import IsPrimeModel from "../../../games/isPrime/isPrimeModel.js";
 
 
 
@@ -27,10 +27,7 @@ describe('check IsPrimeModel prime set', () => {
 
 
 
-
 // Helper Functions
-
-
 function isPrime(num) {
     if (num <= 1) return false; // Numbers less than or equal to 1 are not prime
     if (num === 2) return true; // 2 is the only even prime number

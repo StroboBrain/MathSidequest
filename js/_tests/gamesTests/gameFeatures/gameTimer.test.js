@@ -1,4 +1,4 @@
-import GameTimer from "../../games/gameFeatures/gameTimer.js";
+import GameTimer from "../../../games/gameFeatures/gameTimer.js";
 import { describe, vi, it, expect, assert } from "vitest";
 
 

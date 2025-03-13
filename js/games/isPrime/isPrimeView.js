@@ -8,8 +8,6 @@ export class IsPrimeView {
         this.yetButton = yesButton;
         this.noButton = noButton;
         this.createGameDisplayDiv();
-
-
     }
 
     setTitleDiv(){
