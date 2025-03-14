@@ -8,6 +8,9 @@ export class IsPrimeView {
         this.yetButton = yesButton;
         this.noButton = noButton;
         this.createGameDisplayDiv();
+        this.colorWrongAnswer = "#c20a28";
+        this.colorRightAnswer = "#1e7e34";
+
     }
 
     setTitleDiv(){
@@ -57,9 +60,9 @@ export class IsPrimeView {
 
     answered(input){
         if (input){
-            this.flashBackground(this.parentDiv,400,"green");
+            this.flashBackground(this.parentDiv,400,this.colorRightAnswer);
         } else {
-            this.flashBackground(this.parentDiv,400,"red");
+            this.flashBackground(this.parentDiv,400,this.colorWrongAnswer);
         }
     }
 
