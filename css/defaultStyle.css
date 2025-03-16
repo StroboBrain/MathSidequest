@@ -17,6 +17,7 @@
   padding: 0;
   font-family: inherit; 
   overflow: hidden;
+  color: inherit;
 }
 
 body {
@@ -27,6 +28,7 @@ body {
     height: 100dvh;
     width: 100dvw;
     background-color: var(--darker2Blue);
+    color: var(--almostBlack);
 }
 
 /* containers and backgrounds */
@@ -173,7 +175,8 @@ body {
   text-align: center;
   align-items: center;
   justify-content: center;
-  font-size: clamp(25px, 30vh,35vmin);
+  --gameDisplayWidth: 100%;
+  font-size: clamp(1rem, 20dvh, min(30dvh, 30dvw));
   overflow: hidden;
 }
 
