@@ -13,7 +13,7 @@ var indexClass = new IndexClass(containerForMenu);
 // Not sure if i will switch to id in future, I would love a more general aproach
 
 indexClass.addButton("primeStartButton","primeStartButton menuButton", "PRIME GAME", "isPrimeGame.html");
-indexClass.addButton("squareGameButton","squareGameButton menuButton",  "SQUARE GAME", "escapeRoom.html");
+indexClass.addButton("squareGameButton","squareGameButton menuButton",  "CLASSIC", "classic.html");
 indexClass.addButton("escapeRoom","escapeRoom menuButton", "ESCAPE ROOM", "squareGame.html");
 
 

@@ -1,6 +1,6 @@
 // Creates the html element to display the game
 
-export class IsPrimeView {
+export default class IsPrimeView {
     constructor(titleDiv, parentDiv, yesButton, noButton, isPrimeController){
         this.isPrimeController = isPrimeController;
         this.titleDiv = titleDiv;
@@ -10,7 +10,6 @@ export class IsPrimeView {
         this.createGameDisplayDiv();
         this.colorWrongAnswer = "#c20a28";
         this.colorRightAnswer = "#1e7e34";
-
     }
 
     setTitleDiv(){
@@ -36,7 +35,6 @@ export class IsPrimeView {
     }
 
     upDateContent(content){
-        console.log(content);
         this.gameDisplay.innerHTML = content;
     }
 

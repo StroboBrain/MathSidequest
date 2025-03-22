@@ -1,5 +1,5 @@
 import IsPrimeModel from "./isPrimeModel.js";
-import { IsPrimeView } from "./isPrimeView.js";
+import IsPrimeView from "./isPrimeView.js";
 
 export default class IsPrimeController{
 

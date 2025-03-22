@@ -1,7 +1,7 @@
 import IsPrimeController from "../games/isPrime/isPrimeController.js";
 // This class is responsible for linking up the buttons
 
-export default class IsPrimeRunner {
+export default class EscapeRoomRunner {
     constructor(){
         this.addButtons();
         this.startIsPrimeGame();
@@ -13,20 +13,21 @@ export default class IsPrimeRunner {
         this.yesButton = document.getElementsByClassName("leftButton")[0];
         this.noButton = document.getElementsByClassName("rightButton")[0];
     }
-    startIsPrimeGame(){
-    let taskArguments = [3,6,2];
-    this.isPrimeController = new IsPrimeController(this.titleDiv,this.contentDiv,this.yesButton, this.noButton,taskArguments);
-    this.isPrimeController.startGame();
+
+    startEscapeRoomController(){
+        this.EscapeRoomController = new EscapeRoomController(this.titleDiv,this.contentDiv,this.yesButton, this.noButton,taskArguments);
+
+        this.EscapeRoomController.startGame();
     }
 }
 
 
-function startPrimeRunner(){
-    var isPrimeRunner = new IsPrimeRunner();
+function startEscapeRoomRunner(){
+    var isEscapeRoomRunner = new EscapeRoomRunner();
 }
 
 window.addEventListener("DOMContentLoaded", function() {
-    startPrimeRunner();
+    startEscapeRoomRunner();
 });
 
 

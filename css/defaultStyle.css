@@ -37,7 +37,6 @@ body {
   grid-template-rows: 10fr 75fr 15fr;
   height: 100%;
   width: 100%;
-
   /* mobile first approach */
   max-width: 60dvh;
   background-color: brown; /* debug color */

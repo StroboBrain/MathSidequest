@@ -1,0 +1,5 @@
+.centerBackground {
+    /* Expand the center content */
+    grid-row: 2/4;
+}
+
