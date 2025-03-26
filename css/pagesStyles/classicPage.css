@@ -1,5 +1,51 @@
 .centerBackground {
-    /* Expand the center content */
-    grid-row: 2/4;
+    /* Expand the center content across rows 2 to 4 */
+    grid-row: 2 / 4;
+    display: grid;
+    grid-template-rows: 12fr 4fr; 
+    grid-template-columns: repeat(9, 1fr); 
 }
 
+.taskDisplay {
+    /* Place the task display in the first row, spanning all 9 columns */
+    grid-row: 1;
+    grid-column: 1 / 10;
+    height: 100%;
+    width: 100%;
+}
+
+.answerDisplay {
+    height: 100%;
+    width: 100%;
+    grid-row: 2;
+    grid-column: 1 / 10;
+    display: grid;
+    grid-template-rows: 5fr 1fr 5fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr 6fr 1fr; /* 9 columns */
+}
+
+.answerButton {
+    height: 100%;
+    width: 100%;
+    border-color: var(--darker2Blue);
+}
+
+#answerButton_0 {
+    grid-row: 1; 
+    grid-column: 2; 
+}
+
+#answerButton_1 {
+    grid-row: 1; 
+    grid-column: 4; 
+}
+
+#answerButton_2 {
+    grid-row: 3; 
+    grid-column: 2; 
+}
+
+#answerButton_3 {
+    grid-row: 3; 
+    grid-column: 4; 
+}

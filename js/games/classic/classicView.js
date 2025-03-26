@@ -62,7 +62,7 @@ export default class ClassicView {
 
     #addButtons(parentDiv){
         for (let i = 0; i < 4; i++){
-            let button = this.#createButton("answerButton_"+i, "answerButton");
+            let button = this.#createButton("answerButton_"+i, "answerButton defaultButtonStyle");
             parentDiv.appendChild(button);
         }
     }

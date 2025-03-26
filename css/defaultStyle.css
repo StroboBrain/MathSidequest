@@ -147,7 +147,6 @@ body {
   justify-content: center; /* Center content horizontally */
   white-space: nowrap; /* Prevent text from wrapping */
   overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for overflow text */
   cursor: pointer; /* Change cursor on hover */
 }
 
