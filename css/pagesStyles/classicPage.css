@@ -12,6 +12,10 @@
     grid-column: 1 / 10;
     height: 100%;
     width: 100%;
+    overflow:unset;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 
 .answerDisplay {
@@ -49,3 +53,5 @@
     grid-row: 3; 
     grid-column: 4; 
 }
+
+

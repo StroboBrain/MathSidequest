@@ -75,8 +75,8 @@ export default class ClassicView {
     }
 
     #renderTask(){
-        var equation = "ax^2 + bx + c = 0";
-        katex.render(equation, this.#taskDisplay);
+        var equation = "x^2+3";
+        katex.render("x^2", this.#taskDisplay);
     }
 
     

@@ -14,7 +14,7 @@ var indexClass = new IndexClass(containerForMenu);
 
 indexClass.addButton("primeStartButton","primeStartButton menuButton", "PRIME GAME", "isPrimeGame.html");
 indexClass.addButton("squareGameButton","squareGameButton menuButton",  "CLASSIC", "classic.html");
-indexClass.addButton("escapeRoom","escapeRoom menuButton", "ESCAPE ROOM", "squareGame.html");
+indexClass.addButton("escapeRoom","escapeRoom menuButton", "ESCAPE ROOM", "escapeRoom.html");
 
 
 indexClass.setUpDisplay();
