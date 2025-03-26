@@ -7,13 +7,14 @@ export default class ClassicView {
 
 
     constructor(parentDiv){
-        console.log(parentDiv);
         this.#parentDiv = parentDiv;
         this.#setUpDisplay();
+        this.#renderTask();
     }
 
     #setUpDisplay(){
-        this.#addChild(this.#createTaskDisplay());
+        this.#taskDisplay = this.#createTaskDisplay();
+        this.#addChild(this.#taskDisplay);
         this.#addChild(this.#createAnswerDisplay());
     }
 
@@ -57,7 +58,6 @@ export default class ClassicView {
 
     #addChild(child){
         this.#parentDiv.appendChild(child);
-
     }
 
     #addButtons(parentDiv){
@@ -72,6 +72,11 @@ export default class ClassicView {
         button.className = className;
         button.id = id;
         return button;
+    }
+
+    #renderTask(){
+        var equation = "ax^2 + bx + c = 0";
+        katex.render(equation, this.#taskDisplay);
     }
 
     
