@@ -12,10 +12,9 @@
     grid-column: 1 / 10;
     height: 100%;
     width: 100%;
-    overflow:unset;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
 }
 
 .answerDisplay {
