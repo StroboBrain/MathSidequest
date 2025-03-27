@@ -6,7 +6,7 @@ export default class ClassicController {
     #classicModel;
 
     constructor(parentDiv){
-        this.#classicView = new ClassicView(parentDiv);
+        this.#classicView = new ClassicView(parentDiv, katex);
         this.#classicModel = new ClassicModel();
     }
 

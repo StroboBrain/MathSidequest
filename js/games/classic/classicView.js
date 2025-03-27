@@ -1,12 +1,15 @@
 // Creates the html element to display the game
 
+
 export default class ClassicView {
     #parentDiv;
     #taskDisplay;
+    #katex;
     
 
 
-    constructor(parentDiv){
+    constructor(parentDiv, katex){
+        this.#katex = katex;
         this.#parentDiv = parentDiv;
         this.#setUpDisplay();
         this.#renderTask();
@@ -76,7 +79,7 @@ export default class ClassicView {
 
     #renderTask(){
         var equation = "x^2+3";
-        katex.render("x^2", this.#taskDisplay);
+        this.#katex.render("x^2", this.#taskDisplay);
     }
 
     

@@ -5,7 +5,8 @@ export default class ClassicRunner {
     constructor(){
         this.parentDiv = document.getElementsByClassName("centerBackground")[0];
 
-        this.classicController = new ClassicController(this.parentDiv);
+        // katex already loaded in index.html
+        this.classicController = new ClassicController(this.parentDiv, katex);
     }
 }
 
