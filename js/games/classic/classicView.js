@@ -72,7 +72,7 @@ export default class ClassicView {
 
     #createButton(id, className){
         let button = document.createElement("button");
-        button.className = className;
+        button.className = className; 
         button.id = id;
         return button;
     }
