@@ -5,9 +5,8 @@ export default class ClassicView {
     #parentDiv;
     #taskDisplay;
     #katex;
+    #currentTask = "3+4";
     
-
-
     constructor(parentDiv, katex){
         this.#katex = katex;
         this.#parentDiv = parentDiv;
@@ -78,14 +77,11 @@ export default class ClassicView {
     }
 
     #renderTask(){
-        var equation = "x^2+3";
-        this.#katex.render("x^2", this.#taskDisplay);
+        this.#katex.render(this.#currentTask, this.#taskDisplay);
     }
 
-    
-
-
-
-
-
+    updateTask(task){
+        this.#currentTask = task;
+        this.#renderTask();
+    }
 }

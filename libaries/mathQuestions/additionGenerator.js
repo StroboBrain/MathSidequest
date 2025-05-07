@@ -1,4 +1,4 @@
-import PrimitiveQuestionObject from "./primitiveQuestionObject";
+import PrimitiveQuestionObject from "./primitiveQuestionObject.js";
 
 export default class AdditionGenerator {
     constructor(min, max){

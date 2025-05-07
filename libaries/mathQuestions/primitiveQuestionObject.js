@@ -19,4 +19,7 @@ export default class PrimitiveQuestionObject {
     getSolution(){
         return this.solution;
     }
+    getQuestionString(){
+        return `${this.operand1} ${this.operator} ${this.operand2}`;
+    }
 }
