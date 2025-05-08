@@ -8,8 +8,8 @@ export default class AdditionGenerator {
 
     generateQuestionInRange(){
         let firstNumber = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
-        let secondNumber = Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
-        return new PrimitiveQuestionObject(firstNumber, secondNumber, "+");
+        let secondNumber = Math.floor(Math.random()*(this.max - firstNumber));
+        return new PrimitiveQuestionObject(firstNumber, secondNumber, "+", firstNumber + secondNumber);
     }
 
     // Get a specific addition with a target number

@@ -1,21 +1,20 @@
 import ClassicView from "./classicView.js";
 import ClassicModel from "./classicModel.js";
-import QuestionGenerator from "../../../libaries/mathQuestions/questionsGenerator.js";
 
 export default class ClassicController {
     #classicView;
     #classicModel;
-    #questionGenerator;
 
-    constructor(parentDiv){
+    constructor(parentDiv, katex){
         this.#classicView = new ClassicView(parentDiv, katex);
         this.#classicModel = new ClassicModel();
-        //Prototype only for addition
-        this.#questionGenerator = new QuestionGenerator(["+"],1,1,200);
-        this.#classicView.updateTask(this.#questionGenerator.getTaskArray()[0].getQuestionString());
+        this.nextTask();
     }
 
-    updateTask(){
-
+    nextTask(){
+        let currentTask = this.#classicModel.nextTask();
+        this.#classicView.updateTask(currentTask);
+        let possibleAnswers = this.#classicModel.getPossibleAnswersArray();
+        this.#classicView.updateAnswerButtons(possibleAnswers);
     }
 }

@@ -8,6 +8,7 @@ export default class ClassicRunner {
     }
 }
 
+// creates a classicRunner object and starts the game
 function startClassicRunner(){
     var classicRunner = new ClassicRunner();
 }

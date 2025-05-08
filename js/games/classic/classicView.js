@@ -84,4 +84,13 @@ export default class ClassicView {
         this.#currentTask = task;
         this.#renderTask();
     }
+
+    updateAnswerButtons(possibleAnswers){
+        //Shuffle the possible answers
+        possibleAnswers = [...possibleAnswers].sort(() => Math.random() - 0.5);
+        for (let i = 0; i < possibleAnswers.length; i++){
+            let button = document.getElementById("answerButton_"+i);
+            button.innerHTML = possibleAnswers[i];
+        }
+    }
 }
