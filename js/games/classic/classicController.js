@@ -26,7 +26,8 @@ export default class ClassicController {
         } else {
             this.#wrongAnswer();
         }
-        this.nextTask();
+        console.log("Start");
+        setTimeout(() => {this.nextTask();}, 1000);
     }
     
 

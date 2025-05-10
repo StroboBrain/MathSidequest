@@ -33,22 +33,18 @@
 }
 
 .taskFeedbackDisplay {
-    grid-row: 1;
+    grid-row: 1 / 3;
     grid-column: 1 / 10;
     height: 100%;
     width: 100%;
     display: grid;
     place-items: center;
     font-size: 2rem;
+    display: none; /* Initially hidden */
+    z-index: 9999;
 }
 
-/* Feedback for the task display */
-.taskFeedbackFalse {
-    color: var(--red);
-}
-.taskFeedbackTrue {
-    color: var(--green);
-}
+
 
 /* Button styles */
 .answerButton {
@@ -78,3 +74,12 @@
 }
 
 
+/* Feedback for the task display */
+.taskFeedbackFalse {
+    background-color: var(--red);
+    display: block;
+}
+.taskFeedbackTrue {
+    background-color: var(--green);
+    display: block;
+}

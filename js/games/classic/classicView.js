@@ -100,6 +100,7 @@ export default class ClassicView {
     updateTask(task){
         this.#currentTask = task;
         this.#renderTask();
+        this.#hideTaskFeedback();
     }
 
     updateAnswerButtons(possibleAnswers){
@@ -110,11 +111,15 @@ export default class ClassicView {
     }
 
     rightAnswer(){
-        this.#taskDisplay.style.backgroundColor = "green";
+        this.#taskFeedbackDisplay.classList.add("taskFeedbackTrue");
     }
 
     wrongAnswer(){
-        this.#taskDisplay.style.backgroundColor = "red";
+        this.#taskFeedbackDisplay.classList.add("taskFeedbackFalse");
     }
 
+    #hideTaskFeedback(){
+        // Set class to hidden default
+        this.#taskFeedbackDisplay.className = "taskFeedbackDisplay";     
+    }
 }
