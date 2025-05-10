@@ -1,3 +1,8 @@
+:root {
+    --red: #dc3545;
+    --green: #28a745;
+}
+
 .centerBackground {
     /* Expand the center content across rows 2 to 4 */
     grid-row: 2 / 4;
@@ -23,10 +28,29 @@
     grid-row: 2;
     grid-column: 1 / 10;
     display: grid;
-    grid-template-rows: 5fr 1fr 5fr 1fr;
+    grid-template-rows: 1fr 5fr 1fr 5fr 1fr;
     grid-template-columns: 1fr 6fr 1fr 6fr 1fr; /* 9 columns */
 }
 
+.taskFeedbackDisplay {
+    grid-row: 1;
+    grid-column: 1 / 10;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+}
+
+/* Feedback for the task display */
+.taskFeedbackFalse {
+    color: var(--red);
+}
+.taskFeedbackTrue {
+    color: var(--green);
+}
+
+/* Button styles */
 .answerButton {
     height: 100%;
     width: 100%;
@@ -34,22 +58,22 @@
 }
 
 #answerButton_0 {
-    grid-row: 1; 
+    grid-row: 2; 
     grid-column: 2; 
 }
 
 #answerButton_1 {
-    grid-row: 1; 
+    grid-row: 2; 
     grid-column: 4; 
 }
 
 #answerButton_2 {
-    grid-row: 3; 
+    grid-row: 4; 
     grid-column: 2; 
 }
 
 #answerButton_3 {
-    grid-row: 3; 
+    grid-row: 4; 
     grid-column: 4; 
 }
 

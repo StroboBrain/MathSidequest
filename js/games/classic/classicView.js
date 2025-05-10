@@ -4,20 +4,27 @@
 export default class ClassicView {
     #parentDiv;
     #taskDisplay;
+    #taskFeedbackDisplay;
+    #answerDisplay;
     #katex;
     #currentTask = "3+4";
+    #checkAnswer;
     
-    constructor(parentDiv, katex){
+    constructor(parentDiv, katex, checkAnswer){
         this.#katex = katex;
         this.#parentDiv = parentDiv;
         this.#setUpDisplay();
         this.#renderTask();
+        this.#checkAnswer = checkAnswer;
     }
 
     #setUpDisplay(){
         this.#taskDisplay = this.#createTaskDisplay();
+        this.#answerDisplay = this.#createAnswerDisplay();
+        this.#taskFeedbackDisplay = this.#createTaskFeedbackDisplay();
         this.#addChild(this.#taskDisplay);
-        this.#addChild(this.#createAnswerDisplay());
+        this.#addChild(this.#answerDisplay);
+        this.#addChild(this.#taskFeedbackDisplay);
     }
 
     #createGameDisplayDiv(){
@@ -31,7 +38,6 @@ export default class ClassicView {
     #createTaskDisplay(){
         let taskDisplay = document.createElement("div");
         taskDisplay.className = "taskDisplay";
-        //this.gameDisplay.style.display = "none";
         taskDisplay.id = "taskDisplay";
         return taskDisplay;
     }
@@ -39,10 +45,17 @@ export default class ClassicView {
     #createAnswerDisplay(){
         let answerDisplay = document.createElement("div");
         answerDisplay.className = "answerDisplay";
-        //this.gameDisplay.style.display = "none";
         answerDisplay.id = "answerDisplay";
         this.#addButtons(answerDisplay);
         return answerDisplay;
+    }
+
+    #createTaskFeedbackDisplay(){
+        let taskFeedbackDisplay = document.createElement("div");
+        taskFeedbackDisplay.className = "taskFeedbackDisplay";
+        taskFeedbackDisplay.id = "taskFeedbackDisplay";
+        return taskFeedbackDisplay;
+
     }
 
     addGameDisplayDiv(){
@@ -65,6 +78,10 @@ export default class ClassicView {
     #addButtons(parentDiv){
         for (let i = 0; i < 4; i++){
             let button = this.#createButton("answerButton_"+i, "answerButton defaultButtonStyle");
+            button.onclick = () => {
+                let answer = button.innerHTML;
+                this.#checkAnswer(answer);
+            };
             parentDiv.appendChild(button);
         }
     }
@@ -86,11 +103,18 @@ export default class ClassicView {
     }
 
     updateAnswerButtons(possibleAnswers){
-        //Shuffle the possible answers
-        possibleAnswers = [...possibleAnswers].sort(() => Math.random() - 0.5);
         for (let i = 0; i < possibleAnswers.length; i++){
             let button = document.getElementById("answerButton_"+i);
             button.innerHTML = possibleAnswers[i];
         }
     }
+
+    rightAnswer(){
+        this.#taskDisplay.style.backgroundColor = "green";
+    }
+
+    wrongAnswer(){
+        this.#taskDisplay.style.backgroundColor = "red";
+    }
+
 }
