@@ -10,6 +10,8 @@
     font-size: min(4dvh,7dvw);
     font-family: 'DefaultFont'; /* Currently Chakra Petch*/
     box-sizing: border-box;
+    --red: #dc3545;
+    --green: #28a745;
 }
 
 *{

@@ -6,7 +6,7 @@ export default class ClassicController {
     #classicModel;
 
     constructor(parentDiv, katex){
-        const checkAnswer = this.checkAnswer.bind(this);
+        const checkAnswer = this.#checkAnswer.bind(this);
         this.#classicModel = new ClassicModel();
         this.#classicView = new ClassicView(parentDiv, katex, checkAnswer);
         this.nextTask();
@@ -19,7 +19,7 @@ export default class ClassicController {
         this.#classicView.updateAnswerButtons(possibleAnswers);
     }
 
-    checkAnswer(answer){
+    #checkAnswer(answer){
         let isCorrect = this.#classicModel.checkAnswer(answer);
         if (isCorrect){
             this.#rightAnswer();
