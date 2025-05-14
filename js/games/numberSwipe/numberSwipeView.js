@@ -71,19 +71,15 @@ export default class NumberSwipeView {
         return button;
     }
 
-    updateNumberDisplay(number){
-        this.#numberDisplay.innerHTML = number;
-    }
+
 
 
 
     #buttonFlashBackground(button, className){
         button.classList.add(className);
         setTimeout(() => {
-            console.log("button pressed");
-
             button.classList.remove(className);
-        }, 1500);
+        }, 700);
     }
 
     #addArrowkeyListeners(){
@@ -107,6 +103,15 @@ export default class NumberSwipeView {
             this.#buttonFlashBackground(this.#swipeButtonDisplay.children[0], "leftButtonPressFeedback");
         }
         this.#processSwipe(booleanValue);
+    }
+
+    displayStatistic(statistic){
+        this.#resultDisplay.innerHTML = "statTest";
+        this.#resultDisplay.classList.add("visibleResultDisplay");
+    }
+    
+    updateNumberDisplay(number){
+        this.#numberDisplay.innerHTML = number;
     }
 }
 

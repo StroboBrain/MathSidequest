@@ -86,5 +86,10 @@
     place-items: center;
     font-size: 2rem;
     display: none; /* Initially hidden */
+    background-color: var(--darker2Blue);
     z-index: 9999;
+}
+
+.visibleResultDisplay{
+    display: block;
 }
