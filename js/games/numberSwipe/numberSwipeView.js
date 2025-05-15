@@ -5,22 +5,22 @@ export default class NumberSwipeView {
     #swipeButtonDisplay;
     #resultDisplay;
     #swipeHandler;
+    #statsToHtmlConverter;
 
     constructor(parentDiv, processSwipe){
         this.#parentDiv = parentDiv;
         this.#setUpDisplay();
         this.#processSwipe = processSwipe;
         this.#swipeHandler = new SwipeHandler(this.#swipeButtonDisplay, this.#processSwipe);
+        this.#statsToHtmlConverter = new StatsToHtmlConverter(this.#parentDiv);
     }
 
     #setUpDisplay(){
         this.#numberDisplay = this.#createNumberDisplay();
         this.#swipeButtonDisplay = this.#createSwipeButtonDisplay();
-        this.#resultDisplay = this.#createResultDisplay();
         this.#addButtons(this.#swipeButtonDisplay);
         this.#addChild(this.#numberDisplay);
         this.#addChild(this.#swipeButtonDisplay);
-        this.#addChild(this.#resultDisplay);
         this.#addArrowkeyListeners();
     }
 
@@ -40,12 +40,6 @@ export default class NumberSwipeView {
         swipeButtonDisplay.id = "swipeButtonDisplay";
 
         return swipeButtonDisplay;
-    }
-    #createResultDisplay(){
-        let resultDisplay = document.createElement("div");
-        resultDisplay.className = "resultDisplay";
-        resultDisplay.id = "resultDisplay";
-        return resultDisplay;
     }
 
     #addButtons(parentDiv){
@@ -70,9 +64,6 @@ export default class NumberSwipeView {
         button.id = id;
         return button;
     }
-
-
-
 
 
     #buttonFlashBackground(button, className){
@@ -106,13 +97,64 @@ export default class NumberSwipeView {
     }
 
     displayStatistic(statistic){
-        this.#resultDisplay.innerHTML = "statTest";
-        this.#resultDisplay.classList.add("visibleResultDisplay");
+        this.#statsToHtmlConverter.paintDivs(statistic);
     }
     
     updateNumberDisplay(number){
         this.#numberDisplay.innerHTML = number;
     }
+}
+
+class StatsToHtmlConverter {
+
+    #parentDiv;
+    #resultDisplay;
+
+    constructor(parentDiv){
+        this.#parentDiv = parentDiv;
+        this.#resultDisplay = this.#createResultDisplay();
+        this.#parentDiv.appendChild(this.#resultDisplay);
+    }
+
+
+    // statistic is a javascript map
+    paintDivs(statistic){
+        this.#resultDisplay.classList.add("visibleResultDisplay");
+        this.#resultDisplay.innerHTML = "";
+
+        for (const [key, value] of statistic) {
+            this.#resultDisplay.innerHTML += key + ": " + value + "<br>";
+          }
+    }
+
+    #createResultDisplay(){
+        let resultDisplay = document.createElement("div");
+        resultDisplay.className = "resultDisplay";
+        resultDisplay.id = "resultDisplay";
+        resultDisplay.onclick = () => {
+           resultDisplay.classList.remove("visibleResultDisplay");
+        };
+        return resultDisplay;
+    }
+
+    #createRow(name, value){
+        let row = this.#createDiv(name, "row");
+        let nameDiv = this.#createDiv(name, "name");
+        nameDiv.innerHTML = name;
+        let valueDiv = this.#createDiv(value, "value");
+        valueDiv.innerHTML = value;
+        row.appendChild(nameDiv);
+        row.appendChild(valueDiv);
+        return row;
+    }
+
+    #createDiv(id, className){
+        let div = document.createElement("div");
+        div.className = className; 
+        div.id = id;
+        return div;
+    }
+
 }
 
 
