@@ -24,7 +24,7 @@ export default class NumberSwipeController {
         }
 
         this.#dataSaver.saveData("numberSwipe", this.#numberSwipeModel.getNumberStats());
-        if (this.#numberSwipeModel.getAmountOfNumbersSwiped()%10===0){
+        if (this.#numberSwipeModel.getAmountOfNumbersSwiped()%10===0 && this.#numberSwipeModel.getAmountOfNumbersSwiped() > 0){
             let propertiesStats = this.#numberSwipeModel.getPropertiesStats();
             console.log(propertiesStats);
             this.#numberSwipeView.displayStatistic(propertiesStats);
