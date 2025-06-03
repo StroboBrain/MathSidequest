@@ -12,7 +12,9 @@ export default class NumberSwipeView {
         this.#setUpDisplay();
         this.#processSwipe = processSwipe;
         this.#swipeDetector = new SwipeDetector(null, 100, 1000);
+        this.#setUpSwipeDetector();
         this.#statsToHtmlConverter = new StatsToHtmlConverter(this.#parentDiv);
+
     }
 
     #setUpDisplay(){
@@ -26,19 +28,14 @@ export default class NumberSwipeView {
 
     #setUpSwipeDetector(){
         this.#swipeDetector.on('swipeLeft', () => {
-        console.log('Swiped left!');
         this.#swipeEvent(false);
         });
 
         this.#swipeDetector.on('swipeRight', () => {
-        console.log('Swiped right!');
         this.#swipeEvent(true);
         });
 
     }
-
-
-
 
 
     #addChild(child){
