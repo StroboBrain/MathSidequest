@@ -11,7 +11,7 @@ export default class NumberSwipeView {
         this.#parentDiv = parentDiv;
         this.#setUpDisplay();
         this.#processSwipe = processSwipe;
-        this.#swipeDetector = new SwipeDetector(this.#parentDiv, 100, 1000);
+        this.#swipeDetector = new SwipeDetector(null, 100, 1000);
         this.#statsToHtmlConverter = new StatsToHtmlConverter(this.#parentDiv);
     }
 
