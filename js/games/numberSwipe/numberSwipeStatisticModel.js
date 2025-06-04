@@ -3,8 +3,8 @@ export default class NumberSwipeStatisticModel {
     #numberStats = new NumberStats();
     #propertiesStats = new Map();
 
-    constructor(){
-        this.#numberStats = new NumberStats();
+    constructor(numberStats){
+        this.#numberStats = new NumberStats(numberStats);
         this.#propertiesStats = new Map();
         this.#initPropertiesStats();
     }
@@ -31,8 +31,7 @@ export default class NumberSwipeStatisticModel {
             }
         }
         this.#propertiesStats.set('total', total);
-        this.#propertiesStats.set('sum', summe);
-        
+        this.#propertiesStats.set('sum', summe);  
     }
 
     #initPropertiesStats(){
@@ -89,19 +88,19 @@ export default class NumberSwipeStatisticModel {
         }
         return total;
     }
-
 }
 
 class NumberStats {
-    // Only numbers from 1 to 99 are supported
+    // Only numbers from 1 to 99 are implemented
     #numberHashmap = new Map();
 
     constructor(data){
+        console.log(data);
         if (!data){
             this.#initHashmap();
         }
-        for (let i = 1; i <= 99; i++){
-            this.#numberHashmap.set(i, 0);
+        else {
+            this.#numberHashmap = new Map(data);
         }
     }
 

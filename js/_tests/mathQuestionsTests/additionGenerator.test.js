@@ -11,6 +11,4 @@ describe('check AdditionTaskGenerator', () => {
         expect(task.getOperand1() + task.getOperand2()).toBe(5);
     });
 
-
-
 });

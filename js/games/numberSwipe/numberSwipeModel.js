@@ -6,11 +6,11 @@ export default class NumberSwipeModel {
     #statisticModel;
     
 
-    constructor(minValue, maxValue){
+    constructor(minValue, maxValue, savedData){
         this.#minValue = minValue;
         this.#maxValue = maxValue;
         this.#numberGenerator = new NumbersToAsk();
-        this.#statisticModel = new NumberSwipeStatisticModel();
+        this.#statisticModel = new NumberSwipeStatisticModel(savedData);
     }
 
     #generateRandomNumber(){
