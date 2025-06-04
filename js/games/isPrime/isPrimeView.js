@@ -1,4 +1,4 @@
-// Creates the html element to display the game
+import SwipeDetector from "../gameFeatures/swipeDetector.js";
 
 export default class IsPrimeView {
     constructor(titleDiv, parentDiv, yesButton, noButton, isPrimeController){
@@ -10,6 +10,8 @@ export default class IsPrimeView {
         this.createGameDisplayDiv();
         this.colorWrongAnswer = "#c20a28";
         this.colorRightAnswer = "#1e7e34";
+        this.SwipeDetector = new SwipeDetector(null, 100, 1000);
+        this.setUpSwipeDetector();
     }
 
     setTitleDiv(){
@@ -28,6 +30,16 @@ export default class IsPrimeView {
         this.gameDisplay.className = "gameDisplay";
         //this.gameDisplay.style.display = "none";
         this.gameDisplay.id = "isPrimeGame";
+    }
+
+    setUpSwipeDetector(){
+        this.SwipeDetector.on('swipeLeft', () => {
+            this.checkSolution(false);
+        });
+
+        this.SwipeDetector.on('swipeRight', () => {
+            this.checkSolution(true);
+        });
     }
 
     addGameDisplayDiv(){
@@ -71,5 +83,4 @@ export default class IsPrimeView {
           }, duration);
 
     }
-
 }
