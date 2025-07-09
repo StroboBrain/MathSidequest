@@ -1,6 +1,3 @@
-:root {
-}
-
 .centerBackground {
     /* Expand the center content across rows 2 to 4 */
     grid-row: 2 / 4;
@@ -73,6 +70,8 @@
     font-size: clamp(1rem, 2.7rem, 3rem);
     background-image: url('../svg/buttonBackgrounds/heart.svg');
     background-size: 80%; /* Adjust size as needed */
+    background-position: center 55%;
+    background-repeat: no-repeat;
 
 }
 
