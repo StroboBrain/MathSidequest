@@ -12,10 +12,11 @@ export default class IsPrimeRunner {
         this.contentDiv = document.getElementsByClassName("centerContentContainer")[0];
         this.yesButton = document.getElementsByClassName("leftButton")[0];
         this.noButton = document.getElementsByClassName("rightButton")[0];
+        this.restartButton = document.getElementsByClassName("restartButton")[0];
     }
     startIsPrimeGame(){
     let taskArguments = [3,6,2];
-    this.isPrimeController = new IsPrimeController(this.titleDiv,this.contentDiv,this.yesButton, this.noButton,taskArguments);
+    this.isPrimeController = new IsPrimeController(this.titleDiv, this.contentDiv, this.yesButton,  this.noButton, this.restartButton, taskArguments);
     this.isPrimeController.startGame();
     }
 }

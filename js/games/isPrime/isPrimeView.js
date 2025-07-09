@@ -1,12 +1,13 @@
 import SwipeDetector from "../gameFeatures/swipeDetector.js";
 
 export default class IsPrimeView {
-    constructor(titleDiv, parentDiv, yesButton, noButton, isPrimeController){
+    constructor(titleDiv, parentDiv, yesButton, noButton, restartButton, isPrimeController){
         this.isPrimeController = isPrimeController;
         this.titleDiv = titleDiv;
         this.parentDiv = parentDiv;
-        this.yetButton = yesButton;
+        this.yesButton = yesButton;
         this.noButton = noButton;
+        this.restartButton = restartButton;
         this.createGameDisplayDiv();
         this.colorWrongAnswer = "#c20a28";
         this.colorRightAnswer = "#1e7e34";
@@ -19,10 +20,23 @@ export default class IsPrimeView {
     }
 
     setUpDisplay(){
-        this.addYesButton(this.yetButton);
+        this.addYesButton(this.yesButton);
         this.addNoButton(this.noButton);
+        this.addRestartButton(this.restartButton);
         this.addGameDisplayDiv();
         this.setTitleDiv();
+    }
+
+    startGame(taskValue){
+        this.upDateContent(taskValue);
+        this.displayYesNoButtons();
+        this.restartButton.style.display = "none";
+        this.parentDiv.style.background = ""; // Reset background color
+    }
+
+    displayYesNoButtons(){
+        this.yesButton.style.display = "inline-block";  
+        this.noButton.style.display = "inline-block";
     }
 
     createGameDisplayDiv(){
@@ -36,7 +50,6 @@ export default class IsPrimeView {
         this.SwipeDetector.on('swipeLeft', () => {
             this.checkSolution(false);
         });
-
         this.SwipeDetector.on('swipeRight', () => {
             this.checkSolution(true);
         });
@@ -60,13 +73,27 @@ export default class IsPrimeView {
         buttonDiv.addEventListener("click", () => this.checkSolution(false));
     }
 
+    addRestartButton(buttonDiv){
+        buttonDiv.innerHTML = "RESTART";
+        buttonDiv.style.display = "none"; // Initially hidden
+        buttonDiv.addEventListener("click", () => {
+            this.isPrimeController.startGame();
+        });
+    }
+
     checkSolution(boolAnswer){
         this.isPrimeController.answerPressed(boolAnswer);
     }
 
-    gameOver(){
+    gameOver(){        
+        this.noButton.style.display = "none";
+        this.yesButton.style.display = "none";
         this.upDateContent("GAME OVER");
-    }
+        this.flashBackground(this.parentDiv, 0, this.colorWrongAnswer);
+        setTimeout(() => {
+            this.restartButton.style.display = "inline-block";
+        }, 800);
+        }
 
     answered(input){
         if (input){
@@ -76,11 +103,13 @@ export default class IsPrimeView {
         }
     }
 
+    // Duration of 0 changes the background color but does not revert it
     flashBackground(div,duration,color){
         div.style.backgroundColor = color;
+        if (duration > 0) {
         setTimeout(() => {
             div.style.background = ""; // Revert to the original background
           }, duration);
-
+        }
     }
 }

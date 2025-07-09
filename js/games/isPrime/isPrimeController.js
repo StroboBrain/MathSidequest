@@ -3,22 +3,17 @@ import IsPrimeView from "./isPrimeView.js";
 
 export default class IsPrimeController{
 
-    constructor(titleDiv, divParent, yesButton, noButton, taskArguments){
+    constructor(titleDiv, divParent, yesButton, noButton, restartButton, taskArguments){
         // create needed objects
         this.isPrimeModel = new IsPrimeModel();
-        this.isPrimeView = new IsPrimeView(titleDiv,divParent,yesButton,noButton,this);
-
+        this.isPrimeView = new IsPrimeView(titleDiv,divParent,yesButton,noButton, restartButton,this);
         // Represention the game state
         this.gameIsRunning = false;
         this.taskArguments = taskArguments;
         // load values from the taskArguments
-
         this.setTaskArguments(taskArguments);
         this.createTasks();
-
-        //set the first default task
-        this.activeTask = this.taskArray.pop();
-        this.displayActiveTask();
+        this.isPrimeView.setUpDisplay();
     }
 
     setTaskArguments(taskArguments){
@@ -31,29 +26,49 @@ export default class IsPrimeController{
         return this.isPrimeModel.isPrime(number);
     }
 
-    createTasks() {        
+    createTasks() {
         this.taskArray = this.isPrimeModel.createTaskArray(this.numberOfPrimes,this.numberOfNonPrimes);
     }
 
+    hasTasks(){
+        return this.taskArray.length > 0;
+    }
+
     startGame(){
-        this.createTasks();
         // Set the lives to the start amount
-        this.lives = this.taskArguments[2];
+        this.numberOfLives = this.taskArguments[2];
         this.gameIsRunning = true;
-        this.isPrimeView.setUpDisplay();
+        this.prepareNextTask();
+        this.isPrimeView.startGame(this.activeTask);
+    }
+
+    prepareNextTask(){
+        // Enless creating tasks
+        if (!this.hasTasks()) {
+            this.createTasks();
+        }
+        this.setActiveTask();
+    }
+
+    setActiveTask(){
+        this.activeTask = this.taskArray.pop();
     }
 
     nextTask(){
-        if (this.isGameOver()){
-            this.gameOver();
-        } else {
-            this.activeTask = this.taskArray.pop();
-            this.displayActiveTask();
-        }
+        this.prepareNextTask();
+        this.displayActiveTask();
+    }
+
+    isGameRunning(){
+        return this.gameIsRunning;
     }
 
     checkAnswer(input){
-        return (input===this.isPrimeModel.checkIfPrime(this.activeTask));
+        // If the game is not running, ignore the input
+        if (!this.gameIsRunning) {
+            return;
+        }
+        return (input==this.isPrimeModel.checkIfPrime(this.activeTask));
     }
 
     displayActiveTask(){
@@ -63,23 +78,26 @@ export default class IsPrimeController{
     answerPressed(boolAnswer){
         if (this.checkAnswer(boolAnswer)){
             this.isPrimeView.answered(true);
-        } else this.isPrimeView.answered(false);
+        } else {
+            this.numberOfLives--;
+            if (this.isGameOver()){
+                this.gameOver();
+                return;
+            }
+            this.isPrimeView.answered(false);
+        }
         this.nextTask();
     }
 
     gameOver(){
-        this.isPrimeView.gameOver();
         this.gameIsRunning = false;
-        this.createTasks();
-        this.isPrimeView.disableGameButtons();
+        // Changes the yes and no buttons to restart button
+        this.isPrimeView.gameOver();
     }
 
     isGameOver(){
         // No more lifes
-        if (this.numberOfLives===0) return true;
-        // All numbers answered
-        else if (this.taskArray.length===0) return true;
+        if (this.numberOfLives<=0) return true;
         return false;
     }
-
 }

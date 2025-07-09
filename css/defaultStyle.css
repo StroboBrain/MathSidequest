@@ -7,11 +7,11 @@
     --lightViolet: #8f65a2;
     --baseViolet: #94528c;
     --darkViolet: #973e72;
+    --red: #dc3545;
+    --green: #28a745;
     font-size: min(4dvh,7dvw);
     font-family: 'DefaultFont'; /* Currently Chakra Petch*/
     box-sizing: border-box;
-    --red: #dc3545;
-    --green: #28a745;
 }
 
 *{
@@ -60,7 +60,6 @@ body {
   align-items: center;
   justify-content: center;
 }
-
 
 .bottomToolbarBackground { 
   padding: 0;   
@@ -151,7 +150,6 @@ body {
   cursor: pointer; /* Change cursor on hover */
 }
 
-
 .helpButton {
   width: 100%;
   height: 100%;
@@ -180,9 +178,6 @@ body {
 }
 
 
-
-
-
 /* Media  work ing progress*/
 @media (max-aspect-ratio: 1/1) {
   .contenContainer {
@@ -190,14 +185,6 @@ body {
     background-color: black;
   }
 }
-
-
-
-
-
-
-
-
 
 /* Adding the font, might remove some not needed styles */
 @font-face {
