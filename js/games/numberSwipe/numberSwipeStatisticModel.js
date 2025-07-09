@@ -21,7 +21,7 @@ export default class NumberSwipeStatisticModel {
             if (amountLiked > 0){
                 total += amountLiked;
                 summe += key * amountLiked;
-                // Because the numberstats are sorted
+                // Because the numberstats are sorted, we take the first number as min and last number as max
                 if (noMin){
                     this.#propertiesStats.set('min', key);
                 }

@@ -59,13 +59,13 @@ export default class NumberSwipeView {
 
     #addButtons(parentDiv){
         let leftButton = this.#createButton("leftButton", "swipeButton defaultButtonStyle");
-        leftButton.innerHTML = "✖";
+        leftButton.innerHTML = "";
         leftButton.onclick = () => {
             this.#swipeEvent(false);
         };
 
         let rightButton = this.#createButton("rightButton", "swipeButton defaultButtonStyle");
-        rightButton.innerHTML = "♡";
+        rightButton.innerHTML = "";
         rightButton.onclick = () => {
             this.#swipeEvent(true);
         };

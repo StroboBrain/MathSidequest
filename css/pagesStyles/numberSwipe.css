@@ -51,6 +51,9 @@
     border-color: var(--darker2Blue);
     color: var(--darker2Blue);
     text-align: center; 
+    background-size: cover;          /* or 'contain' or specific size */
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 #leftButton {
@@ -58,7 +61,8 @@
     grid-column: 2; 
     justify-self: center;
     align-self: center;
-    font-size: clamp(1rem, 2rem, 3rem);    
+    font-size: clamp(1rem, 2rem, 3rem);
+    background-image: url('../svg/buttonBackgrounds/cross.svg');
 }
 
 #rightButton {
@@ -67,6 +71,9 @@
     justify-self: center;
     align-self: center;
     font-size: clamp(1rem, 2.7rem, 3rem);
+    background-image: url('../svg/buttonBackgrounds/heart.svg');
+    background-size: 80%; /* Adjust size as needed */
+
 }
 
 .rightButtonPressFeedback{
