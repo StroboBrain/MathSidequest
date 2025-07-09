@@ -90,12 +90,12 @@ export default class NumberSwipeStatisticModel {
     }
 }
 
+// Holds the statistics of the numbers swiped in the NumberSwipe game
 class NumberStats {
     // Only numbers from 1 to 99 are implemented
     #numberHashmap = new Map();
 
     constructor(data){
-        console.log(data);
         if (!data){
             this.#initHashmap();
         }

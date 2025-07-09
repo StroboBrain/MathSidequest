@@ -5,11 +5,10 @@ export default class NumberSwipeModel {
     #numberGenerator;
     #statisticModel;
     
-
     constructor(minValue, maxValue, savedData){
         this.#minValue = minValue;
         this.#maxValue = maxValue;
-        this.#numberGenerator = new NumbersToAsk();
+        this.#numberGenerator = new NumberGenerator();
         this.#statisticModel = new NumberSwipeStatisticModel(savedData);
     }
 
@@ -44,7 +43,7 @@ export default class NumberSwipeModel {
 
 }
 
-class NumbersToAsk {
+class NumberGenerator {
     // Numberrange hardcoded to 1-99
     #numbersToAsk = [
         1,  2,  3,  4,  5,  6,  7,  8,  9, 10,

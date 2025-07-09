@@ -20,15 +20,15 @@ export default class NumberSwipeController {
         // false = left, true = right
         if (swipeDirection){
             this.#numberSwipeModel.addLikedNumber(this.#currentNumber);
+            this.#dataSaver.saveData("numberSwipe", this.#numberSwipeModel.getNumberStats());
+            if (this.#numberSwipeModel.getAmountOfNumbersSwiped()%10===0 && this.#numberSwipeModel.getAmountOfNumbersSwiped() > 0){
+                let propertiesStats = this.#numberSwipeModel.getPropertiesStats();
+                this.#numberSwipeView.displayStatistic(propertiesStats);
+        }
         } else {
             // TODO: Add disliked number functionality
         }
-
-        this.#dataSaver.saveData("numberSwipe", this.#numberSwipeModel.getNumberStats());
-        if (this.#numberSwipeModel.getAmountOfNumbersSwiped()%10===0 && this.#numberSwipeModel.getAmountOfNumbersSwiped() > 0){
-            let propertiesStats = this.#numberSwipeModel.getPropertiesStats();
-            this.#numberSwipeView.displayStatistic(propertiesStats);
-        }
+        // Get next number ready
         this.#askNumber();
     }
 
